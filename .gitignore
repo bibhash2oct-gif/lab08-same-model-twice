@@ -5,3 +5,5 @@ __pycache__/
 .DS_Store
 .venv/
 .vscode/
+# The Keras checkpoint is a binary file that train_keras.py recreates.
+models/
