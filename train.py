@@ -102,11 +102,14 @@ def train(
     return history
 
 
-def run(settings: dict, splits: Splits, verbose: bool = False):
-    """Build a fresh, seeded network and train it with the given settings."""
-    torch.manual_seed(SEED)
+def run(settings: dict, splits: Splits, verbose: bool = False, seed: int = SEED):
+    """Build a fresh, seeded network and train it with the given settings.
+
+    The seed sets the starting weights and the shuffling. The rows never change.
+    """
+    torch.manual_seed(seed)
     train_loader, val_loader, _ = make_loaders(
-        splits, batch_size=settings["batch_size"], seed=SEED
+        splits, batch_size=settings["batch_size"], seed=seed
     )
     model = BikeNet(splits.n_features, settings["hidden"], settings["n_layers"])
     history = train(
