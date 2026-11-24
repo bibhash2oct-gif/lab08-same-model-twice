@@ -1,0 +1,9 @@
+{
+  "val_mae": 2.87,
+  "test_mae": 2.665,
+  "best_epoch": 108,
+  "seconds": 5.1,
+  "parameters": 4801,
+  "checkpoint_kb": 81.3,
+  "keras_version": "3.15.1"
+}
